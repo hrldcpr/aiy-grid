@@ -1,5 +1,8 @@
-#wall {
+main {
   width: 100vw;
   height: 100vh;
-  background: white;
+  background: #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
