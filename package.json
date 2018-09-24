@@ -1,0 +1,24 @@
+{
+  "name": "ooo",
+  "version": "0.0.1",
+  "license": "MIT",
+  "scripts": {
+    "build": "parcel build --no-minify --public-url=./ src/index.html",
+    "deploy": "yarn build && gh-pages -d dist",
+    "start": "parcel src/index.html"
+  },
+  "dependencies": {
+    "sanitize.css": "^7.0.3"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.0",
+    "node-sass": "^4.9.2",
+    "parcel-bundler": "^1.9.7",
+    "prettier": "^1.14.0",
+    "typescript": "^3.0.1"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "es5"
+  }
+}
