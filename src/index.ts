@@ -5,7 +5,7 @@ import aiyPng from './aiy.png';
 
 const COLUMNS = 6;
 const ROWS = COLUMNS;
-const W = 80;
+const W = 90;
 const H = W;
 const D = 10;
 const RANGE = 400;
