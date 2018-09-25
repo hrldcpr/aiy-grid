@@ -51,14 +51,16 @@ const glows = range(ROWS).map(row => {
   });
 });
 
-svg.addEventListener('mousemove', ({ offsetX, offsetY }: MouseEvent) => {
+addEventListener('mousemove', ({ clientX, clientY }: MouseEvent) => {
+  const { top, left } = svg.getBoundingClientRect();
+
   glows.forEach((glows, row) => {
-    const y = D + (H + D) * (row + 0.5);
+    const y = top + D + (H + D) * (row + 0.5);
 
     glows.forEach((glow, column) => {
-      const x = D + (W + D) * (column + 0.5);
+      const x = left + D + (W + D) * (column + 0.5);
 
-      const d = Math.hypot(offsetX - x, offsetY - y);
+      const d = Math.hypot(clientX - x, clientY - y);
       const a = Math.pow(Math.max(0, RANGE - d) / RANGE, 2);
       glow.setAttribute('fill', `rgba(0, 255, 255, ${a})`);
     });
