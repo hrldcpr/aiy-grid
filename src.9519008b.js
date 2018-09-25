@@ -107,8 +107,8 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
 },{}],"eHzx":[function(require,module,exports) {
 
-},{"./happiness.svg":[["happiness.e045e5e3.svg","2DvT"],"2DvT"]}],"Ej48":[function(require,module,exports) {
-module.exports = "aiy.a4e9c36f.png";
+},{"./happiness.svg":[["happiness.373b1f0d.svg","2DvT"],"2DvT"]}],"Ej48":[function(require,module,exports) {
+module.exports = "aiy.9cebc930.png";
 },{}],"7QCb":[function(require,module,exports) {
 "use strict";
 
@@ -161,19 +161,23 @@ var glows = range(ROWS).map(function (row) {
         return glow;
     });
 });
-svg.addEventListener('mousemove', function (_ref) {
-    var offsetX = _ref.offsetX,
-        offsetY = _ref.offsetY;
+addEventListener('mousemove', function (_ref) {
+    var clientX = _ref.clientX,
+        clientY = _ref.clientY;
+
+    var _svg$getBoundingClien = svg.getBoundingClientRect(),
+        top = _svg$getBoundingClien.top,
+        left = _svg$getBoundingClien.left;
 
     glows.forEach(function (glows, row) {
-        var y = D + (H + D) * (row + 0.5);
+        var y = top + D + (H + D) * (row + 0.5);
         glows.forEach(function (glow, column) {
-            var x = D + (W + D) * (column + 0.5);
-            var d = Math.hypot(offsetX - x, offsetY - y);
+            var x = left + D + (W + D) * (column + 0.5);
+            var d = Math.hypot(clientX - x, clientY - y);
             var a = Math.pow(Math.max(0, RANGE - d) / RANGE, 2);
             glow.setAttribute('fill', "rgba(0, 255, 255, " + a + ")");
         });
     });
 });
 },{"sanitize.css":"caD7","./index.scss":"eHzx","./aiy.png":"Ej48"}]},{},["7QCb"], null)
-//# sourceMappingURL=src.b57093bd.map
+//# sourceMappingURL=src.7b443e7b.map

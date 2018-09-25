@@ -175,8 +175,8 @@ module.exports = reloadCSS;
 var reloadCSS = require('_css_loader');
 module.hot.dispose(reloadCSS);
 module.hot.accept(reloadCSS);
-},{"./happiness.svg":[["happiness.9bf67797.svg","happiness.svg"],"happiness.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"aiy.png":[function(require,module,exports) {
-module.exports = "/aiy.8de6388e.png";
+},{"./happiness.svg":[["happiness.c2f7ca2f.svg","happiness.svg"],"happiness.svg"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"aiy.png":[function(require,module,exports) {
+module.exports = "/aiy.7c391082.png";
 },{}],"index.ts":[function(require,module,exports) {
 "use strict";
 
@@ -229,15 +229,19 @@ var glows = range(ROWS).map(function (row) {
         return glow;
     });
 });
-svg.addEventListener('mousemove', function (_ref) {
-    var offsetX = _ref.offsetX,
-        offsetY = _ref.offsetY;
+addEventListener('mousemove', function (_ref) {
+    var clientX = _ref.clientX,
+        clientY = _ref.clientY;
+
+    var _svg$getBoundingClien = svg.getBoundingClientRect(),
+        top = _svg$getBoundingClien.top,
+        left = _svg$getBoundingClien.left;
 
     glows.forEach(function (glows, row) {
-        var y = D + (H + D) * (row + 0.5);
+        var y = top + D + (H + D) * (row + 0.5);
         glows.forEach(function (glow, column) {
-            var x = D + (W + D) * (column + 0.5);
-            var d = Math.hypot(offsetX - x, offsetY - y);
+            var x = left + D + (W + D) * (column + 0.5);
+            var d = Math.hypot(clientX - x, clientY - y);
             var a = Math.pow(Math.max(0, RANGE - d) / RANGE, 2);
             glow.setAttribute('fill', "rgba(0, 255, 255, " + a + ")");
         });
@@ -272,7 +276,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '49512' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '57298' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -414,4 +418,4 @@ function hmrAccept(bundle, id) {
   });
 }
 },{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.ts"], null)
-//# sourceMappingURL=/src.8d133b05.map
+//# sourceMappingURL=/src.f0d4d008.map

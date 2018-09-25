@@ -591,4 +591,5 @@ main {
   background: #f8f8f8;
   display: flex;
   align-items: center;
-  justify-content: center; }
+  justify-content: center;
+  cursor: url("happiness.373b1f0d.svg"), default; }
