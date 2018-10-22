@@ -3,7 +3,7 @@ import 'sanitize.css';
 import './index.scss';
 import aiyPng from './aiy.png';
 
-const COLUMNS = 6;
+const COLUMNS = 5;
 const ROWS = COLUMNS;
 const W = 90;
 const H = W;
