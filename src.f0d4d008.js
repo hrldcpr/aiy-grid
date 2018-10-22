@@ -189,7 +189,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 require("sanitize.css");
 require("./index.scss");
 var aiy_png_1 = __importDefault(require("./aiy.png"));
-var COLUMNS = 6;
+var COLUMNS = 5;
 var ROWS = COLUMNS;
 var W = 90;
 var H = W;
@@ -276,7 +276,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '57298' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '58948' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
